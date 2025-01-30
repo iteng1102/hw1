@@ -21,12 +21,12 @@ void split(Node*& in, Node*& odds, Node*& evens)
   }
   Node* current = in;
   in = nullptr;
-  if (current->value % 2 == 0){
+  if (current->value % 2 == 0){ //if node is even, make it the current node 
     evens = current;
     split(current->next, odds, evens->next); //goes to next even node
   }
   else{
-    odds = current;
+    odds = current; //makes node current if odd
     split(current->next, odds->next, evens); //goes to next odd node 
   }
 }
